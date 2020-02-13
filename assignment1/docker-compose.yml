@@ -17,3 +17,6 @@ services:
       - 10000
     volumes:
       - ./server:/var/www
+
+  tictactoe:
+    build: ./tictactoe

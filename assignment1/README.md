@@ -12,3 +12,6 @@ To run the server on this machine you can run `docker-compose run -e port={portN
 If you want to run the client remotely you can run `docker run granhof/telekom1-client -p {portNumber}:{localPort}/{protocol} -i -e host={hostIP} -e port={portNumber} {protocol}`. The `-p` flag takes in two ports seperated by a `:`. The left port number is which port the container should use inside the docker network, it needs to be the same as the `-e port=`. The right side is which port the container should bind to on your local network. Its recommended that its the same port. The `/` after sets which protocol the container should bind to. The `-i` flag is important, it enables the container to be shell interactive. E.g. `docker run -p 10000:10000/udp granhof/telekom1-client udp`.
 
 You can also run the server remotely and pull an image from docker by running `docker run -p {portNumber}:{localPort}/{protocol} granhof/telekom1-server {protocol}`. Note that you need to pass the `-p` parameter to expose a port on the machine. E.g. `docker run -p 10000:10000/udp granhof/telekom1-server udp`.
+
+## TicTacToe
+To run tictactoe you can simply use `docker-compose run tictactoe` or if you want to run it remotely you can use `docker run granhof/telekom1-tictactoe`.
