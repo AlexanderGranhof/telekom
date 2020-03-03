@@ -10,7 +10,7 @@ const udpSocket = dgram.createSocket("udp4");
 
 process.on("SIGINT", () => udpSocket.close())
 
-(async () => {
+;(async () => {
     const delay = parseInt(await input.question("Delay between packets (ms): "))
     const ip = await input.question("Provide target ip: ")
     const port = parseInt(await input.question("Provide target port: "))
