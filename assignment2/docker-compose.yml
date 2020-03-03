@@ -13,5 +13,6 @@ services:
   server:
     build: ./sender
     command: sender.js
+    stdin_open: true
     ports:
       - 8080
