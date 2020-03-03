@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  client:
+    build: ./receiver
+    # command: tcp
+    stdin_open: true
+    ports:
+      - 10000
+    volumes:
+      - ./client:/var/www
+
+  server:
+    build: ./client
+    # command: tcp
+    ports:
+      - 10000
+    volumes:
+      - ./server:/var/www
+
+  tictactoe:
+    build: ./tictactoe
