@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  client:
-    build: ./receiver
+  receiver:
+    build: .
     command: receiver.js
     stdin_open: true
     ports:
@@ -10,8 +10,8 @@ services:
     volumes:
       - ./client:/var/www
 
-  server:
-    build: ./sender
+  sender:
+    build: .
     command: sender.js
     stdin_open: true
     ports:
