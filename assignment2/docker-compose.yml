@@ -3,20 +3,15 @@ version: '3'
 services:
   client:
     build: ./receiver
-    # command: tcp
+    command: receiver.js
     stdin_open: true
     ports:
-      - 10000
+      - 8080
     volumes:
       - ./client:/var/www
 
   server:
-    build: ./client
-    # command: tcp
+    build: ./sender
+    command: sender.js
     ports:
-      - 10000
-    volumes:
-      - ./server:/var/www
-
-  tictactoe:
-    build: ./tictactoe
+      - 8080
